@@ -1,0 +1,21 @@
+{
+  "name": "Agente de Voz",
+  "short_name": "AgenteVoz",
+  "description": "Seu assistente virtual com voz",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f0f2f5",
+  "theme_color": "#4CAF50",
+  "icons": [
+    {
+      "src": "https://raw.githubusercontent.com/google/material-design-icons/master/iconfont/android.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "https://raw.githubusercontent.com/google/material-design-icons/master/iconfont/android.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}

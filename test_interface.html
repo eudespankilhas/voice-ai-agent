@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Agente de Voz</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        #resultado { margin-top: 20px; padding: 15px; background-color: #f0f0f0; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Agente de Voz</h1>
+    <input type="file" id="audioFile" accept="audio/*">
+    <button onclick="enviarAudio()">Enviar Áudio</button>
+    <div id="resultado"></div>
+
+    <script>
+        async function enviarAudio() {
+            const audio = document.getElementById('audioFile').files[0];
+            if (!audio) {
+                alert('Por favor, selecione um arquivo de áudio');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('audio', audio);
+
+            try {
+                document.getElementById('resultado').innerHTML = '<p>Processando...</p>';
+                const response = await fetch('http://localhost:5000/process', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    throw new Error('Erro na resposta do servidor');
+                }
+
+                const data = await response.json();
+                document.getElementById('resultado').innerHTML = `
+                    <h2>Resultado:</h2>
+                    <p>Texto transcrito: ${data.transcribed}</p>
+                    <p>Resposta: ${data.response}</p>
+                `;
+            } catch (error) {
+                console.error('Erro:', error);
+                document.getElementById('resultado').innerHTML = 
+                    `<p style="color: red;">Erro ao processar o áudio: ${error.message}</p>`;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teste de Áudio</title>
+</head>
+<body>
+    <h1>Teste de Áudio</h1>
+    <form id="audioForm" enctype="multipart/form-data">
+        <input type="file" id="audioFile" accept="audio/*" required>
+        <button type="submit">Enviar Áudio</button>
+    </form>
+    <div id="response"></div>
+
+    <script>
+        document.getElementById('audioForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData();
+            formData.append('audio', document.getElementById('audioFile').files[0]);
+            
+            try {
+                const response = await fetch('http://localhost:5000/process', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const result = await response.json();
+                document.getElementById('response').innerHTML = `
+                    <h2>Resultado:</h2>
+                    <p>Texto transcrito: ${result.transcribed}</p>
+                    <p>Resposta: ${result.response}</p>
+                `;
+            } catch (error) {
+                console.error('Erro:', error);
+                document.getElementById('response').innerHTML = `<p style="color: red;">Erro: ${error.message}</p>`;
+            }
+        });
+    </script>
+</body>
+</html>

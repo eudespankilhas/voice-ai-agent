@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teste Agente de Voz</title>
+    <script>
+        function falar() {
+            const texto = document.getElementById('texto').value;
+            fetch('http://localhost:5000/speak', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ text: texto })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro na resposta do servidor');
+                }
+                return response.blob();
+            })
+            .then(blob => {
+                const url = URL.createObjectURL(blob);
+                const audio = new Audio(url);
+                audio.play();
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                alert('Erro ao processar o texto: ' + error.message);
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Teste Agente de Voz</h1>
+    <textarea id="texto" rows="4" cols="50">Hello! Testing the server.</textarea><br>
+    <button onclick="falar()">Falar</button>
+</body>
+</html>

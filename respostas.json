@@ -1,0 +1,41 @@
+{
+    "greetings": [
+        "Olá! Como posso ajudar você hoje?",
+        "Olá! Como posso auxiliar você?",
+        "Olá! Em que posso ajudar?",
+        "Olá! Como posso ser útil?",
+        "Olá! Como posso ajudar você hoje?"
+    ],
+    "status": [
+        "Estou bem, obrigado! Como posso ajudar você?",
+        "Estou ótimo, obrigado! Como posso ajudar você?",
+        "Estou bem, obrigado! Como posso ajudar você?",
+        "Estou ótimo, obrigado! Como posso ajudar você?",
+        "Estou bem, obrigado! Como posso ajudar você?"
+    ],
+    "name": [
+        "Sou um assistente virtual criado para ajudar você!",
+        "Sou seu assistente virtual! Como posso ajudar você?",
+        "Sou um assistente virtual criado para auxiliar você!",
+        "Sou seu assistente virtual! Como posso ajudar você?",
+        "Sou um assistente virtual criado para auxiliar você!"
+    ],
+    "weather": [
+        "Não posso fornecer informações sobre o tempo, mas você pode verificar no site do INMET!",
+        "Não posso fornecer informações sobre o tempo, mas você pode verificar no site do INMET!",
+        "Não posso fornecer informações sobre o tempo, mas você pode verificar no site do INMET!",
+        "Não posso fornecer informações sobre o tempo, mas você pode verificar no site do INMET!",
+        "Não posso fornecer informações sobre o tempo, mas você pode verificar no site do INMET!"
+    ],
+    "time": [
+        "Agora são 17:34 horas. Como posso ajudar você?",
+        "São 17:34 horas. Como posso auxiliar você?"
+    ],
+    "default": [
+        "Desculpe, não entendi sua pergunta. Por favor, tente novamente!",
+        "Desculpe, não entendi sua pergunta. Por favor, tente novamente!",
+        "Desculpe, não entendi sua pergunta. Por favor, tente novamente!",
+        "Desculpe, não entendi sua pergunta. Por favor, tente novamente!",
+        "Desculpe, não entendi sua pergunta. Por favor, tente novamente!"
+    ]
+}
